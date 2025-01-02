@@ -111,7 +111,13 @@ export class AppComponent implements OnInit {
         this.countriesMap.get(
           member.coundtryId ?? AppComponent.DEFAULT_COUNTRY_ID
         )?.name ?? AppComponent.DEFAULT_COUNTRY_NAME;
-      finalInnerHtml += `<li>${member.name} ${member.surname} | ${member.street} ${member.houseNumber}, ${member.zipCode} ${member.city}, ${country}</li>`;
+      finalInnerHtml += `<li>${member.name} ${member.surname} | ${
+        member.street
+      } ${member.houseNumber}${
+        member.apartmentNumber !== undefined
+          ? ' apart. ' + member.apartmentNumber
+          : ''
+      }, ${member.zipCode} ${member.city}, ${country}</li>`;
 
       if (Array.isArray(member.children) && member.children.length) {
         finalInnerHtml += this.transformSortedMembersToHtmlList(
