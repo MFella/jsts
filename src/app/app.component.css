@@ -1,0 +1,12 @@
+div[class^='task-'] {
+  padding: 2rem;
+  margin: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  margin-bottom: 2rem;
+}
+
+.task-2 ul {
+  @apply h-32;
+}
